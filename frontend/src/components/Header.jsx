@@ -8,6 +8,12 @@ function Header() {
   const triggerRef = useRef(null);
   const menuRef = useRef(null);
 
+  // 다크모드 토글
+  const darkModeToggle = document.getElementById('darkMode_toggle');
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
   useEffect(() => {
     if (!isMenuOpen) {
       return undefined;
@@ -118,6 +124,12 @@ function Header() {
                     Image Uploads
                   </Link>
                 )}
+
+                {/* 다크모드 토글 */}
+                <button type = "button" id = "darkMode_toggle">
+                  Toggle DarkMode
+                </button>
+
                 <button
                   type="button"
                   className="user-popover__logout"
